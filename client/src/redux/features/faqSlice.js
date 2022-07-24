@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit/";
 
 export const getFaqs = createAsyncThunk("faqs/getFaqs", async ({authToken})=>{
     return fetch(
-        "http://localhost:5000/api/faq/getfaq",
+        "/api/faq/getfaq",
         {
           method: "GET",
           headers: {
@@ -16,7 +16,7 @@ export const getFaqs = createAsyncThunk("faqs/getFaqs", async ({authToken})=>{
 
 export const deleteFaqs = createAsyncThunk("faqs/deleteFaqs", async ({authToken,id})=>{
     return fetch(
-        `http://localhost:5000/api/faq/deletefaq/${id}`,
+        `/api/faq/deletefaq/${id}`,
         {
           method: "PUT",
           headers: {
@@ -30,7 +30,7 @@ export const deleteFaqs = createAsyncThunk("faqs/deleteFaqs", async ({authToken,
 
 export const updateFaqs = createAsyncThunk("faqs/updateFaqs", async ({authToken,id,question,answer,cat_name,cat_id})=>{
     return fetch(
-        `http://localhost:5000/api/faq/updatefaq/${id}`,
+        `/api/faq/updatefaq/${id}`,
         {
           method: "PUT",
           headers: {
@@ -49,7 +49,7 @@ export const updateFaqs = createAsyncThunk("faqs/updateFaqs", async ({authToken,
 
 export const addFaq = createAsyncThunk("faqs/addFaq", async ({authToken,question,answer,cat_name,cat_id})=>{
     return fetch(
-        `http://localhost:5000/api/faq/createfaq`,
+        `/api/faq/createfaq`,
         {
           method: "POST",
           headers: {

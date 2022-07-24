@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit/";
 export const getUser = createAsyncThunk("user/login", async (data)=>{
     const {email, password} = data;
     // console.log(email,password)
-    return fetch("http://localhost:5000/api/auth/login", {
+    return fetch("/api/auth/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -18,7 +18,7 @@ export const getUser = createAsyncThunk("user/login", async (data)=>{
 export const createUser = createAsyncThunk("user/create",async (data) =>{
     const {name, email, password} = data;
     return fetch(
-        `http://localhost:5000/api/auth/createuser`,
+        `/api/auth/createuser`,
         {
             method: "POST",
             headers: {
@@ -32,7 +32,7 @@ export const createUser = createAsyncThunk("user/create",async (data) =>{
 export const changePass = createAsyncThunk("user/changepass", async (data)=>{
     const {password,new_password,authToken} = data;
     // console.log(email,password)
-    return fetch("http://localhost:5000/api/auth/changepass/", {
+    return fetch("/api/auth/changepass/", {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
